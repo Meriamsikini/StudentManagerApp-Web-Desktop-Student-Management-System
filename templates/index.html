@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .search-bar form {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            width: 250px;
+        }
+
+        button, .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover, .btn:hover {
+            background-color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .btn-red {
+            background-color: #e74c3c;
+        }
+
+        .btn-red:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-blue {
+            background-color: #3498db;
+        }
+
+        .btn-blue:hover {
+            background-color: #2980b9;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>Student Management</h1>
+        <nav>
+            <a href="{{ url_for('ajouter') }}">
+                <img src="/static/add-user.png" alt="add-icon" style="width:18px; height:18px; margin-left:6px;">
+            Add
+            </a>
+            <a href="{{ url_for('stats') }}">
+                <img src="/static/bar-chart.png" alt="stats-icon" style="width:18px; height:18px; margin-left:6px;">
+            Statistics
+            </a>
+            <a href="{{ url_for('logout') }}">
+                <img src="/static/logout.png" alt="logout-icon" style="width:18px; height:18px; margin-left:6px;">
+            Logout
+            </a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <form action="{{ url_for('recherche') }}" method="POST">
+                <input type="text" name="recherche_nom" placeholder="Search by name...">
+                <button type="submit">	Search</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for etudiant in students %}
+                <tr>
+                    <td>{{ etudiant.ID }}</td>
+                    <td>{{ etudiant.Nom }}</td>
+                    <td>{{ etudiant.Prénom }}</td>
+                    <td>{{ etudiant.Email }}</td>
+                    <td>{{ etudiant.Matière }}</td>
+                    <td>{{ etudiant.Note }}</td>
+                    <td class="actions">
+                        <a href="{{ url_for('modifier', id=etudiant.ID) }}" class="btn btn-blue">Edit</a>
+                        <a href="{{ url_for('supprimer', id=etudiant.ID) }}" class="btn btn-red" onclick="return confirm('Supprimer cet étudiant ?');">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

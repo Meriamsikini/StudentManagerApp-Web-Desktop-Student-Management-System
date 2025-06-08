@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #d9d9d9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #d9d9d9;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .input-field {
+            background-color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 20px;
+            width: 100%;
+            margin-bottom: 20px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+            font-size: 16px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 25px;
+            background-color: #000;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #333;
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .signup a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form class="login-container" method="POST">
+        <h2>Login</h2>
+
+        {% if error %}
+            <div class="error-message">{{ error }}</div>
+        {% endif %}
+
+        <input class="input-field" type="text" name="username" placeholder="Username" required>
+        <input class="input-field" type="password" name="password" placeholder="Password" required>
+
+        <div class="checkbox-container">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot password</a>
+        </div>
+
+        <button class="btn" type="submit">Sign In</button>
+
+        <div class="signup">
+            Don't have account? <a href="#">Sign Up</a>
+        </div>
+    </form>
+</body>
+</html>
+

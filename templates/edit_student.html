@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier Étudiant</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #222;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #222;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>to update</h2>
+        
+        <form action="{{ url_for('modifier', id=student.ID) }}" method="POST">
+    <input type="text" name="Nom" placeholder="Nom" value="{{ student.Nom }}" required>
+    <input type="text" name="Prénom" placeholder="Prénom" value="{{ student.Prénom }}" required>
+    <input type="email" name="Email" placeholder="Email" value="{{ student.Email }}" required>
+    <input type="text" name="Matière" placeholder="Matière" value="{{ student.Matière }}" required>
+    <input type="number" name="Note" placeholder="Note" value="{{ student.Note }}" step="0.01" required>
+    <button type="submit">Mettre à jour</button>
+</form>
+
+        <a href="{{ url_for('index') }}" class="back-link"> Back to list</a>
+    </div>
+</body>
+</html>
