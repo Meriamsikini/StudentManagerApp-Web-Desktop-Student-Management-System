@@ -39,5 +39,11 @@ pip install -r requirements.txt
 python main.py
 
 ## ✨ Screenshots
+[img](https://github.com/Meriamsikini/StudentManagerApp-Web-Desktop-Student-Management-System/blob/main/Capture%20d'%C3%A9cran%202025-06-08%20202242.png?raw=true)
+[img]()
+[img]()
+[img]()
+[img]()
+[img]()
 
 Made with ❤️ by Meriam sikini
