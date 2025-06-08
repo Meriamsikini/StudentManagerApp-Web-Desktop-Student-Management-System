@@ -29,7 +29,7 @@ A modern student management application developed with Flask (Web) and PyQt (Des
 ## ⚙️ How to Run
 
 ### Web App
-```bash
+
 
 pip install -r requirements.txt
 python app.py
@@ -38,7 +38,6 @@ python app.py
 pip install -r requirements.txt
 python main.py
 
-
-
+## ✨ Screenshots
 
 Made with ❤️ by Meriam sikini
