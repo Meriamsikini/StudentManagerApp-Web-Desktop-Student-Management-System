@@ -40,7 +40,7 @@ python main.py
 
 ## ✨ Screenshots
 [img](https://github.com/Meriamsikini/StudentManagerApp-Web-Desktop-Student-Management-System/blob/main/Capture%20d'%C3%A9cran%202025-06-08%20202242.png?raw=true)
-[img]()
+[img](https://github.com/Meriamsikini/StudentManagerApp-Web-Desktop-Student-Management-System/blob/main/Capture%20d'%C3%A9cran%202025-06-08%20202039.png?raw=true)
 [img]()
 [img]()
 [img]()
