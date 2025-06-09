@@ -41,9 +41,7 @@ python main.py
 ## ✨ Screenshots
 ![Capture d'écran](https://github.com/Meriamsikini/StudentManagerApp-Web-Desktop-Student-Management-System/blob/main/Capture%20d'%C3%A9cran%202025-06-08%20202242.png?raw=true)
 ![Capture d'écran](https://github.com/Meriamsikini/StudentManagerApp-Web-Desktop-Student-Management-System/blob/main/Capture%20d'%C3%A9cran%202025-06-08%20202039.png?raw=true)
-![Capture d'écran]()
-![Capture d'écran]()
-![Capture d'écran]()
-![Capture d'écran]()
+
+
 
 Made with ❤️ by Meriam sikini
